@@ -1,0 +1,29 @@
+spring:
+  # thymeleaf配置
+  thymeleaf:
+    # 关闭缓存
+    cache: false
+  # 数据源配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhostL3306/seckill?userUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/shanghai
+    username: root
+    password: 16426359
+    # 连接池
+    hikari:
+      # 连接池名称
+      pool-name: DateHikariCP
+      # 最小空闲连接
+      minimum-idle: 5
+      # 空闲连接存货最大时间，默认600000，十分钟
+      idle-timeout: 600000
+      # 最大连接数，默认10
+      maximum-pool-size: 10
+      # 从连接池返回的连接自动提交
+      auto-commit: true
+      # 连接最大存活时间，默认30000，30秒
+      max-lifetime: 30000
+      # 类似心跳机制，测试连接是否可用的查询语句
+      connection-test-query: SELECT 1
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*mapper.xml
