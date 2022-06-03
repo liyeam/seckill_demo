@@ -1,9 +1,11 @@
 package com.liyeam.seckill.entity;
 
-import java.time.LocalDateTime;
-import java.io.Serializable;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -11,13 +13,19 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author liyeam
- * @since 2022-06-02
+ * @since 2022-06-03
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class User implements Serializable {
+public class TUser implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
+    /**
+     * 用户ID，手机号码
+     */
+    @TableId
+    private Long id;
 
     private String nickname;
 

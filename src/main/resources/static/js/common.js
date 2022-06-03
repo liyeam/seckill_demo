@@ -8,7 +8,7 @@ function g_showLoading() {
 }
 
 // salt 与服务器端的第一次salt是相同
-var g_passsword_salt = "1A2B3C4D";
+var g_passsword_salt = "1a2b3c4d";
 
 
 // 获取url参数
