@@ -9,13 +9,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
+
 @Controller
 @RequestMapping("/login")
 @Slf4j
 public class LoginController {
 
     @Autowired
-    ITUserService service;
+    private ITUserService service;
     /**
      * 跳转到登录页面
      * @return
@@ -27,8 +31,8 @@ public class LoginController {
 
     @RequestMapping("/doLogin")
     @ResponseBody
-    public RespBean doLogin(LoginVo vo){
-        RespBean respBean = service.doLogin(vo);
+    public RespBean doLogin(@Valid LoginVo vo, HttpServletRequest request, HttpServletResponse response){
+        RespBean respBean = service.doLogin(vo, request, response);
         log.info("接收到数据：{}",vo);
         return respBean;
     }

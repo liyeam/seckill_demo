@@ -100,19 +100,19 @@
             success: function (data) {
                 console.log("success");
                 layer.closeAll();
-                if (data.code === 200) {
+                if (data.code == 200) {
                     layer.msg("成功");
                     // console.log(data);
-                    //window.location.href = "/goods/goodsList";
+                    window.location.href = "/goods/goodsList";
                 } else {
-                    layer.msg(data.msg);
+                    layer.msg(data.message);
                 }
-                console.log(data);// 在控制台打印json返回
+                //console.log(data);// 在控制台打印json返回
             },
 
             // 请求失败时候的回调
             error: function () {
-                alert();
+                //alert();
                 layer.closeAll();
             }
         });

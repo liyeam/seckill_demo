@@ -24,7 +24,7 @@ public class RespBean {
     }
 
     /**
-     * 响应成功，带返回值
+     * 响应成功
      * @param obj
      * @return 将数据封装成obj返回
      */
@@ -33,11 +33,11 @@ public class RespBean {
     }
 
     /**
-     * 响应失败，没有返回值
+     * 响应失败
      * @return
      */
-    public static RespBean error() {
-        return new RespBean(RespBeanEnum.SUCCESS.getCode(), RespBeanEnum.SUCCESS.getMessage(), null);
+    public static RespBean error(RespBeanEnum respBeanEnum) {
+        return new RespBean(respBeanEnum.getCode(), respBeanEnum.getMessage(), null);
     }
 
 
@@ -46,7 +46,7 @@ public class RespBean {
      * @param obj
      * @return 将数据封装成obj返回
      */
-    public static RespBean error(Object obj) {
-        return new RespBean(RespBeanEnum.SUCCESS.getCode(), RespBeanEnum.SUCCESS.getMessage(), obj);
+    public static RespBean error(RespBeanEnum respBeanEnum, Object obj) {
+        return new RespBean(respBeanEnum.getCode(), respBeanEnum.getMessage(), obj);
     }
 }
